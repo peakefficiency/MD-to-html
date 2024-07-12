@@ -17,17 +17,17 @@ export function Markdown() {
   }, [markdown])
   
 
-  const handleCopyHTML = () => {
+  const handleCopyHTML = async () => {
     const tempElement = document.createElement('div');
-    tempElement.innerHTML = renderedHTML;
+    tempElement.innerHTML = await renderedHTML;
     document.body.appendChild(tempElement);
     
     const range = document.createRange();
     range.selectNodeContents(tempElement);
     
     const selection = window.getSelection();
-    selection.removeAllRanges();
-    selection.addRange(range);
+    selection?.removeAllRanges();
+    selection?.addRange(range);
     
     document.execCommand('copy');
     
@@ -76,7 +76,7 @@ export function Markdown() {
   )
 }
 
-function ClipboardIcon(props) {
+function ClipboardIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -97,7 +97,7 @@ function ClipboardIcon(props) {
 }
 
 
-function EyeOffIcon(props) {
+function EyeOffIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -120,7 +120,7 @@ function EyeOffIcon(props) {
 }
 
 
-function XIcon(props) {
+function XIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
