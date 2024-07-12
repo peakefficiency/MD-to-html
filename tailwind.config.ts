@@ -16,6 +16,7 @@ const config: Config = {
       typography: {
         DEFAULT: {
           css: {
+            maxWidth: '100%',
             h1: {
               color: 'hsl(var(--foreground))',
             },
